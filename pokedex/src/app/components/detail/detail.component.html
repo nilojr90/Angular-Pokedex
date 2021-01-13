@@ -1,1 +1,35 @@
-<p>detail works!</p>
+<div class="row">
+    <div class="col-12 col-sm-4 text-center pb-5 pt-3">
+        <div class="card">
+            <span>#{{pokemon.id}}</span>
+            <img src="../../../assets/ditto.png" alt="{{pokemon.name}}">
+            <!-- <img src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}}"> -->
+        </div>
+    </div>
+    <div class="col-12 col-sm-6">
+        <H1>{{pokemon.name | titlecase}}</H1>
+        <span>Altura: {{pokemon.height}} </span><br />
+        <span>Peso: {{pokemon.weight}} lbs</span><br />
+        <span>Tipo: </span>
+        <span *ngFor="let item of pokemon.types">
+            {{item.type.name}}
+        </span><br />
+
+        <span>Status: </span><br />
+        <div *ngFor="let item of pokemon.stats">
+            <div class="row">
+                <div class="col-4">
+                    <span> {{item.stat.name}} </span> <span> {{item.base_stat}} </span>
+                </div>
+
+                <div class="col-8">
+                    <div class="progress p-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{item.base_stat}}"
+                            aria-valuemin="0" aria-valuemax="100" style="width:{{item.base_stat}}%">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { IPokemon } from 'src/app/model/pokemon';
+import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
   selector: 'dex-detail',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  name: string = "";
+  pokemon!: IPokemon;
+
+  constructor(
+    private pokeApi: PokeApiService,
+    private route: ActivatedRoute) {
+
+    this.name = route.snapshot.params.id;
+  }
 
   ngOnInit(): void {
+    this.pokemon = this.pokeApi.getPokemonByName(this.name);
   }
 
 }
