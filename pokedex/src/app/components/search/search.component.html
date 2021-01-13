@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">
-    <div class="col-9 mr-0 pr-0">
+    <div class="col-9 mr-0 pr-0 mb-2">
         <input type="text" name="pokemonName" [(ngModel)]="pokemonName" (keypress)="autoCompleteHandler()"
             class="form-control">
     </div>
@@ -13,5 +13,10 @@
         <button type="submit" class="btn btn-primary" (click)="searchHandler()">
             Buscar
         </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8 ml-3" *ngFor="let sugestion of sugestions">
+        <a routerLink="../detail/{{sugestion}}" routerLinkActive="active">{{sugestion}}</a>
     </div>
 </div>

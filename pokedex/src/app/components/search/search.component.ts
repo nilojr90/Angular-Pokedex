@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dex-search',
@@ -7,19 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  pokemonName: String = "";
+  pokemonName: string = "";
+  sugestions: string[] = [];
+  list: string[] = ["ditto", "pikachu", "ratata"];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   searchHandler() {
     console.log(this.pokemonName);
+
+    if (this.sugestions.length > 0) {
+      this.router.navigateByUrl(`detail/${this.pokemonName}`);
+    }
   }
 
   autoCompleteHandler() {
-    console.log(this.pokemonName);
+    if (this.pokemonName.length > 0) {
+      this.sugestions = this.list.filter((item) => {
+        return item.startsWith(this.pokemonName);
+      });
+    }
   }
 
 }
