@@ -1,7 +1,9 @@
+// https://quicktype.io/typescript/
+
 export interface IPokemon {
-    abilities: Ability2[];
+    abilities: Ability[];
     base_experience: number;
-    forms: Ability[];
+    forms: Detail[];
     game_indices: Gameindex[];
     height: number;
     held_items: Helditem[];
@@ -11,7 +13,7 @@ export interface IPokemon {
     moves: Move[];
     name: string;
     order: number;
-    species: Ability;
+    species: Detail;
     sprites: Sprites;
     stats: Stat[];
     types: Type[];
@@ -20,13 +22,13 @@ export interface IPokemon {
 
 interface Type {
     slot: number;
-    type: Ability;
+    type: Detail;
 }
 
 interface Stat {
     base_stat: number;
     effort: number;
-    stat: Ability;
+    stat: Detail;
 }
 
 interface Sprites {
@@ -158,38 +160,38 @@ interface Dreamworld {
 }
 
 interface Move {
-    move: Ability;
+    move: Detail;
     version_group_details: Versiongroupdetail[];
 }
 
 interface Versiongroupdetail {
     level_learned_at: number;
-    move_learn_method: Ability;
-    version_group: Ability;
+    move_learn_method: Detail;
+    version_group: Detail;
 }
 
 interface Helditem {
-    item: Ability;
+    item: Detail;
     version_details: Versiondetail[];
 }
 
 interface Versiondetail {
     rarity: number;
-    version: Ability;
+    version: Detail;
 }
 
 interface Gameindex {
     game_index: number;
-    version: Ability;
+    version: Detail;
 }
 
-interface Ability2 {
-    ability: Ability;
+interface Ability {
+    ability: Detail;
     is_hidden: boolean;
     slot: number;
 }
 
-interface Ability {
+interface Detail {
     name: string;
     url: string;
 }
