@@ -891,6 +891,13 @@ export const ditto = {
                 "name": "normal",
                 "url": "https://pokeapi.co/api/v2/type/1/"
             }
+        },
+        {
+            "slot": 2,
+            "type": {
+                "name": "water",
+                "url": "https://pokeapi.co/api/v2/type/1/"
+            }
         }
     ],
     "weight": 40

@@ -1,0 +1,40 @@
+.hp::after{
+    content: "\f004";
+}
+
+.attack::after{
+    content: "\f05b";
+}
+.defense::after{
+    content: "\f111";
+}
+.special-attack::after{
+    content: "\f006";
+}
+.special-defense::after{
+    content: "\f007";
+}
+.speed::after{
+    content: "\f008";
+}
+
+div.type{
+width: 60px;
+height: 20px;
+margin: 6px;
+font-size: small;
+border-radius: 5px;
+text-align: center;
+text-transform: capitalize;
+display: inline-block;
+}
+
+div.type.normal{
+    background-color: firebrick;
+    color: beige;
+}
+
+div.type.water{
+    background-color:aqua;
+    color:black;
+}

@@ -7,25 +7,39 @@
         </div>
     </div>
     <div class="col-12 col-sm-6">
-        <H1>{{pokemon.name | titlecase}}</H1>
-        <span>Altura: {{pokemon.height}} </span><br />
-        <span>Peso: {{pokemon.weight}} lbs</span><br />
-        <span>Tipo: </span>
-        <span *ngFor="let item of pokemon.types">
-            {{item.type.name}}
-        </span><br />
+        <div class="row">
+            <div class="col">
+                <H1>{{pokemon.name | titlecase}}</H1>
+                <p>Altura: {{pokemon.height}}
+                    Peso: {{pokemon.weight}} lbs</p>
 
-        <span>Status: </span><br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Tipo: </h2>
+                <div *ngFor="let item of pokemon.types" class="type {{item.type.name}}">
+                    {{item.type.name}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Status: </h2>
+            </div>
+        </div>
         <div *ngFor="let item of pokemon.stats">
             <div class="row">
-                <div class="col-4">
-                    <span> {{item.stat.name}} </span> <span> {{item.base_stat}} </span>
+                <div class="col-2 pr-0 text-right">
+                    <i class="fa {{item.stat.name}}" aria-hidden="true"></i>
+                    {{item.base_stat}}
                 </div>
 
-                <div class="col-8">
-                    <div class="progress p-0">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="{{item.base_stat}}"
-                            aria-valuemin="0" aria-valuemax="100" style="width:{{item.base_stat}}%">
+                <div class="col-10 pl-0">
+                    <div class="progress pl-0 m-1">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                            style="width:{{item.base_stat}}%">
                         </div>
                     </div>
                 </div>
