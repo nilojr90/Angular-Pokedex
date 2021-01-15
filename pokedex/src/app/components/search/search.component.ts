@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IPokedexEntry } from 'src/app/model/pokedex';
+import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
   selector: 'dex-search',
@@ -9,27 +11,33 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   pokemonName: string = "";
-  sugestions: string[] = [];
-  list: string[] = ["ditto", "pikachu", "ratata"];
+  sugestions: IPokedexEntry[] = [];
+  pokemonList: IPokedexEntry[] = [];
 
-  constructor(private router: Router) { }
+  constructor(
+    private pokeApi: PokeApiService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    this.pokemonList = this.pokeApi.getPokemonList(100, 0);
   }
 
   searchHandler() {
-    console.log(this.pokemonName);
 
-    if (this.sugestions.length > 0) {
+    if (this.pokemonName.length > 0) {
       this.router.navigateByUrl(`detail/${this.pokemonName}`);
     }
   }
 
-  autoCompleteHandler() {
-    if (this.pokemonName.length > 0) {
-      this.sugestions = this.list.filter((item) => {
-        return item.startsWith(this.pokemonName);
+  autoCompleteHandler(event: KeyboardEvent) {
+
+    if ((event.key !== "Backspace") && (this.pokemonName.length > 0)) {
+      this.sugestions = this.pokemonList.filter((item) => {
+        return item.name.startsWith(this.pokemonName.toLowerCase());
       });
+    } else {
+      this.sugestions = [];
     }
   }
 

@@ -6,17 +6,17 @@
 
 <div class="row">
     <div class="col-9 mr-0 pr-0 mb-2">
-        <input type="text" name="pokemonName" [(ngModel)]="pokemonName" (keypress)="autoCompleteHandler()"
-            class="form-control">
+        <input type="text" name="pokemonName" [(ngModel)]="pokemonName" (keydown)="autoCompleteHandler($event)"
+            class="form-control square-right">
     </div>
     <div class="col-3 ml-0 pl-0">
-        <button type="submit" class="btn btn-primary" (click)="searchHandler()">
+        <button type="submit" class="btn btn-primary square-left" (click)="searchHandler()" style="width: 100%;">
             Buscar
         </button>
     </div>
 </div>
 <div class="row">
     <div class="col-8 ml-3" *ngFor="let sugestion of sugestions">
-        <a routerLink="../detail/{{sugestion}}" routerLinkActive="active">{{sugestion}}</a>
+        <a routerLink="../detail/{{sugestion.name}}" routerLinkActive="active">{{sugestion.name}}</a>
     </div>
 </div>
