@@ -2,14 +2,14 @@
     <div class="col-12 col-sm-4 p-0 text-center order-sm-2">
         <div class="card p-5 p-sm-3">
             <!-- <img clas="card-img" src="../../../assets/ditto.png" alt="{{pokemon.name}}"> -->
-            <img clas="card-img" src="{{pokemon.sprites.other.dream_world.front_default}}" alt="{{pokemon.name}}">
+            <img clas="card-img" src="{{pokemon['sprites']['other']['official-artwork']['front_default']}}"
+                alt="{{pokemon.name}}">
             <div class="card-img-overlay text-left d-flex flex-column justify-content-bottom p-1">
                 #{{pokemon.id}}
             </div>
         </div>
-
         <div class="card p-5 p-sm-3 d-none d-sm-flex">
-            <img clas="card-img" src="{{pokemon.sprites.other.official-artwork?.front_default}}" alt="{{pokemon.name}}">
+            <img clas="card-img" src="{{pokemon.sprites.other.dream_world.front_default}}" alt="{{pokemon.name}}">
         </div>
     </div>
     <div class="col-12 col-sm-8 order-sm-1">
@@ -52,3 +52,4 @@
             </div>
         </div>
     </div>
+</div>
