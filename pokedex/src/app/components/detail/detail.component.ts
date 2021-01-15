@@ -17,11 +17,15 @@ export class DetailComponent implements OnInit {
     private pokeApi: PokeApiService,
     private route: ActivatedRoute) {
 
-    this.name = route.snapshot.params.id;
+    this.name = route.snapshot.params.name;
   }
 
   ngOnInit(): void {
-    this.pokemon = this.pokeApi.getPokemonByName(this.name);
+    this.pokeApi.getPokemonByName(this.name)
+      .subscribe(response => {
+        this.pokemon = response;
+        console.log(this.pokemon);
+      });
   }
 
 }

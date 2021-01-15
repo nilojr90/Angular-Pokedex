@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
 import { IPokedexEntry } from '../model/pokedex';
 import { IPokemon } from '../model/pokemon';
+
 import { ditto } from './ditto';
 import { pokemonList } from './pokemon-list';
 
@@ -9,11 +14,13 @@ import { pokemonList } from './pokemon-list';
 })
 export class PokeApiService {
 
+  private url: string = "https://pokeapi.co/api/v2/";
 
-  constructor() { }
 
-  getPokemonByName(name: string): IPokemon {
-    return ditto;
+  constructor(private http: HttpClient) { }
+
+  getPokemonByName(name: string): Observable<IPokemon> {
+    return this.http.get<IPokemon>(this.url + "pokemon/" + name);
   }
 
   getPokemonById(id: number): IPokemon {
@@ -24,3 +31,4 @@ export class PokeApiService {
     return pokemonList.results;
   }
 }
+
