@@ -22,11 +22,17 @@ div.type{
 width: 60px;
 height: 20px;
 margin: 6px;
-font-size: small;
+font-size: 1em;
+line-height: 1em;
 border-radius: 5px;
 text-align: center;
 text-transform: capitalize;
 display: inline-block;
+
+color:black;
+
+background-color: #bdd4e7;
+background-image: linear-gradient(180deg, #4eaaf5 50%, #e64e4e 51%);
 }
 
 div.type.normal{
