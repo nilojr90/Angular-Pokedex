@@ -29,18 +29,92 @@ text-align: center;
 text-transform: capitalize;
 display: inline-block;
 
-color:black;
 
 background-color: #bdd4e7;
-background-image: linear-gradient(180deg, #4eaaf5 50%, #e64e4e 51%);
+color:black;
 }
 
-div.type.normal{
-    background-color: firebrick;
-    color: beige;
+div.type.bug{
+    background-color:#75ce65;
+    color:white;
 }
-
-div.type.water{
-    background-color:aqua;
+ div.type.dark{
+    background-color:#727677;
+    color:white;
+}
+ div.type.dragon{
+    background-color:#fa7509;
+    background-image: linear-gradient(180deg,#f36767 50%, #4eaaf5 51%);
+    color:white;
+}
+ div.type.electric{
+    background-color:#eee23e;
     color:black;
+}
+ div.type.fairy{
+    background-color:#f37bdf;
+    color:white;
+}
+ div.type.fighting{
+    background-color:#f57931;
+    color:white;
+}
+ div.type.fire{
+    background-color:#f5513b;
+    color:white;
+}
+ div.type.flying{
+    background-color:#727f81;
+    background-image: linear-gradient(180deg, #73b8f1 50%, #c5cfd8 51%);
+    color:black;
+}
+ div.type.ghost{
+    background-color:#7f00b9;
+    color:white;
+}
+ div.type.grass{
+    background-color:#90d451;
+    color:black;
+}
+ div.type.ground{
+    background-image: linear-gradient(180deg, #f5f847 50%, #b3b141 51%);
+    color:black;
+}
+ div.type.ice{
+    background-color:#b6eef6;
+    color:black;
+}
+ div.type.normal{
+    background-color:#727f81;
+    color:black;
+}
+ div.type.poison{
+    background-color:#cd94e7;
+    color:white;
+}
+ div.type.psychic{
+    background-color:#e459ba;
+    color:white;
+}
+ div.type.rock{
+    background-color:#c28b14;
+    color:white;
+}
+ div.type.shadow{
+    background-color:#38094b;
+    color:white;
+}
+ div.type.steel{
+    background-color:#abb1b9;
+    background-image: linear-gradient(180deg, #abb1b9 50%, #88919c 51%);
+    color:black;
+}
+ div.type.unknown{
+    background-color:#727f81;
+    background-image: linear-gradient(180deg, #4ef586 50%, #cfcfcf 51%);
+    color:black;
+}
+ div.type.water{
+    background-color:#1388cc;
+    color:white;
 }
